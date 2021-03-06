@@ -1,0 +1,20 @@
+---
+
+spring:
+  cloud:
+    config:
+      enabled: false
+
+encryption-service-spring:
+  encryption:
+    password: ${ENCRYPTION_PASSWORD:changeit}
+    secretKeyFactoryAlgorithm: ${SECRET_KEY_ALGORITHM:PBKDF2WithHmacSHA1}
+    cipherAlgorithm: ${CIPHER_ALGORITHM:AES/CBC/PKCS5Padding}
+  decryption:
+    password: ${DECRYPTION_PASSWORD:changeit}
+    secretKeyFactoryAlgorithm: ${SECRET_KEY_ALGORITHM:PBKDF2WithHmacSHA1}
+    cipherAlgorithm: ${CIPHER_ALGORITHM:AES/CBC/PKCS5Padding}
+  security:
+    basicAuthenticationUserName: ${BASIC_AUTH_USERNAME:user1}
+    basicAuthenticationPassword: ${BASIC_AUTH_PASSWORD:changeit}
+    basicAuthenticationRole: ${BASIC_AUTH_ROLE:USER}

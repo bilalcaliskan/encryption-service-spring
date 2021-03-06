@@ -1,0 +1,11 @@
+---
+
+spring:
+  application:
+    name: encryption-service-spring
+  profiles:
+    active: ${SPRING_ACTIVE_PROFILES:local}
+  cloud:
+    config:
+      uri: http://${CONFIG_SERVICE_HOST:localhost}:${CONFIG_SERVICE_PORT:8888}
+      fail-fast: true
